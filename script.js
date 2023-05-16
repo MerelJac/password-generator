@@ -4,6 +4,12 @@
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
+// the random variables?
+const uppercaseOptions = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+const lowercaseOptions = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+const symbolOptions = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')'];
+const numberOptions = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+
 var writePassword = function () {
     // add prompts to output booleans
     var uppercasePrompt = window.confirm("Include uppercase letters?");
@@ -37,6 +43,12 @@ var writePassword = function () {
 
     };
 
+
+ 
+
+    var combinedCases = getRandomCombination(uppercaseOptions, lowercaseOptions);
+    console.log(combinedCases);
+
     var password = window.alert("Your new password is: ");
 }
 
@@ -44,12 +56,6 @@ var writePassword = function () {
 
 generateBtn.addEventListener("click", function() {console.log("Hi")});
 
-// the random variables?
-const uppercaseOptions = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-const lowercaseOptions = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-const symbolOptions = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')'];
-const numberOptions = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
-;
 
 // Write password to the #password input
 function writePassword() {
