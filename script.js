@@ -9,7 +9,7 @@ var generateBtn = document.querySelector("#generate");
 const uppercaseOptions = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 const lowercaseOptions = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 const symbolOptions = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')'];
-const numberOptions = [1,2,3,4,5,6,7,8,9,10];
+const numberOptions = ["1","2","3","4","5","6","7","8","9","10"];
 var possibleCharacter = [];
 
 var writePassword = function () {
@@ -23,7 +23,6 @@ var writePassword = function () {
     var numbersPrompt = window.confirm("Include numbers?");
     var lengthPrompt = window.prompt("Length of password. Please keep between 8 and 128 characters.");
     if (lengthPrompt > 128 || lengthPrompt < 8 ) lengthPrompt == false; console.log(lengthPrompt);
-    console.log(typeof Number(lengthPrompt));
 
     // push true variables to the empty string variables possibleCharacter
     // ... added the contents to the array instead of just combining the arrays to 4 total
@@ -33,16 +32,22 @@ var writePassword = function () {
     if (numbersPrompt == true) {possibleCharacter.push(...numberOptions)};
     // check that array pushed correctly
     console.log(possibleCharacter);
-    // how to compute randomized
-    
+    console.log(possibleCharacter[34]);
+
+    // how to compute randomized array
     var includeCharacters=[];
     for (var i = 0; i < lengthPrompt; i++) {
-        let newPassword = Math.floor(Math.random() * possibleCharacter);
+        let index = Math.floor(Math.random() * possibleCharacter.length);
+        let newPassword = possibleCharacter[index];
         includeCharacters.push(newPassword);
     }
+
     console.log(includeCharacters);
-    console.log(includeCharacters.join());
-    // window.alert("Your new password is: " + password);
+    // combine randomized array without commas using .join() function
+    var updatedPassword = includeCharacters.join("");
+    console.log(updatedPassword);
+    window.alert("Your new password is: " + updatedPassword);
+
 }
 
 // next steps: add randomization element and add print to page (see source code for these hints)
