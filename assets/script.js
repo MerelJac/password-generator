@@ -46,12 +46,10 @@ var writePassword = function () {
     // combine randomized array without commas using .join() function
     var updatedPassword = includeCharacters.join("");
     console.log(updatedPassword);
-    window.alert("Your new password is: " + updatedPassword);
-
+    // window.alert("Your new password is: " + updatedPassword);
+    // print password to HTML id password - don't use # for id
+    document.getElementById("password").textContent = updatedPassword;
 }
-
-// next steps: add randomization element and add print to page (see source code for these hints)
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
