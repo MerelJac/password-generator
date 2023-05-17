@@ -11,8 +11,11 @@ This code can be edited with different string variables to be used in the random
  This code can be downloaded via Zip files and imported to an IDE. 
 
  ## Screenshots of Deployed Application
- ![alt text](password-gen-output.png)
- ![alt text](password-gen-prompts.png) 
+ This is an image of the window prompts for password criteria:
+ ![alt text](./assets/password-gen-prompts.png)
+ This is an image of the random password printed on the HTML file.
+ ![alt text](./assets/password-gen-output.png)
+  
 
  ## Link for Deployment
  https://mereljac.github.io/password-generator/
