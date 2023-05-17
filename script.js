@@ -28,16 +28,21 @@ var writePassword = function () {
     if (lowercasePrompt == true) {possibleCharacter.push(...lowercaseOptions)};
     if (symbolPrompt == true) {possibleCharacter.push(...symbolOptions)};
     if (numbersPrompt == true) {possibleCharacter.push(...numberOptions)};
-
+    // check that array pushed correctly
     console.log(possibleCharacter);
+    // how to compute randomized
+    var includeCharacters=[];
+    for (var i = 0; i < lengthPrompt; i++) {
+        let newPassword = Math.floor(Math.random() * possibleCharacter);
+        includeCharacters.push(newPassword);
+    }
 
-    // how to compute randomized?
-
-    var password = possibleCharacter(Math.floor(Math.random() * lengthPrompt));
-    window.alert("Your new password is: " + password);
+    console.log(includeCharacters);
+    // window.alert("Your new password is: " + password);
 }
 
 // next steps: add randomization element and add print to page (see source code for these hints)
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
