@@ -19,3 +19,6 @@ This code can be edited with different string variables to be used in the random
 
  ## Link for Deployment
  https://mereljac.github.io/password-generator/
+
+## Notes
+This code was refactored as an assignment and originally belongs to the University of Oregon and sourced from GitHub.com/coding-boot-camp/friendly-parakeet.
