@@ -13,16 +13,17 @@ const numberOptions = ["1","2","3","4","5","6","7","8","9","10"];
 var possibleCharacter = [];
 
 var writePassword = function () {
+    possibleCharacter = [];
     // add prompts to output booleans
     var uppercasePrompt = window.confirm("Include uppercase letters?");
-    console.log(uppercasePrompt);
     var lowercasePrompt = window.confirm("Include lowercase letters?");
-    console.log(lowercasePrompt);
     var symbolPrompt = window.confirm("Include symbols?");
-    console.log(symbolPrompt);
     var numbersPrompt = window.confirm("Include numbers?");
     var lengthPrompt = window.prompt("Length of password. Please keep between 8 and 128 characters.");
-    if (lengthPrompt > 128 || lengthPrompt < 8 ) lengthPrompt == false; console.log(lengthPrompt);
+    if (lengthPrompt > 128 || lengthPrompt < 8 ) {
+        window.alert('Please keep between 8 and 128 characters.');
+        lengthPrompt = window.prompt("Try again: Length of password (between 8-128");
+    }
 
     // push true variables to the empty string variables possibleCharacter
     // ... added the contents to the array instead of just combining the arrays to 4 total
@@ -30,9 +31,6 @@ var writePassword = function () {
     if (lowercasePrompt == true) {possibleCharacter.push(...lowercaseOptions)};
     if (symbolPrompt == true) {possibleCharacter.push(...symbolOptions)};
     if (numbersPrompt == true) {possibleCharacter.push(...numberOptions)};
-    // check that array pushed correctly
-    console.log(possibleCharacter);
-    console.log(possibleCharacter[34]);
 
     // how to compute randomized array
     var includeCharacters=[];
@@ -42,10 +40,8 @@ var writePassword = function () {
         includeCharacters.push(newPassword);
     }
 
-    console.log(includeCharacters);
     // combine randomized array without commas using .join() function
     var updatedPassword = includeCharacters.join("");
-    console.log(updatedPassword);
     // window.alert("Your new password is: " + updatedPassword);
     // print password to HTML id password - don't use # for id
     document.getElementById("password").textContent = updatedPassword;
